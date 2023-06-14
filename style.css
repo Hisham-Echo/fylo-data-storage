@@ -1,0 +1,244 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+
+:root {
+    font-size: 14px;
+    /* ## Colors */
+    /* ### Primary */
+    --Gradient: hsl(6, 100%, 80%) to hsl(335, 100%, 65%);
+
+    /* ### Neutral */
+    --Pale-Blue: hsl(243, 100%, 93%);
+    --Grayish-Blue: hsl(229, 7%, 55%);
+    --Dark-Blue: hsl(228, 56%, 26%);
+    --Very-Dark-Blue: hsl(229, 57%, 11%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+}
+
+span {
+    font-weight: 700;
+}
+
+body {
+    height: 100vh;
+    color: var(--Pale-Blue);
+    display: grid;
+    place-items: center;
+    background-image: url(images/bg-mobile.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+main {
+    margin: 20px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    max-width: 500px;
+}
+
+main .card {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 40px;
+    width: 100%;
+    background-color: var(--Dark-Blue);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+main .card.top {
+    align-items: flex-start;
+    border-top-right-radius: 90px;
+}
+
+main .top div {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 15px;
+}
+
+main .top div .img {
+    background-color: var(--Very-Dark-Blue);
+    padding: 10px;
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+main .top div .img:first-child::before {
+    content: "";
+    background-image: url(images/icon-document.svg);
+    width: 30px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-left: 3px;
+}
+
+main .top div .img:nth-child(2)::before {
+    content: "";
+    background-image: url(images/icon-folder.svg);
+    width: 30px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-top: 2px;
+}
+
+main .top div .img:last-child::before {
+    content: "";
+    background-image: url(images/icon-upload.svg);
+    width: 30px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-top: 3px;
+}
+
+main .bottom .progress {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 15px;
+}
+
+main .bottom .progress .bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    border-radius: 20px;
+    background-color: hsla(229, 57%, 11%, 0.445);
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+main .bottom .progress .bar::before {
+    content: "";
+    width: 70%;
+    height: 15px;
+    background-image: linear-gradient(
+        90deg,
+        hsl(6, 100%, 80%),
+        hsl(335, 100%, 65%)
+    );
+    position: absolute;
+    top: 2px;
+    left: 3px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+main .bottom .progress .bar::after {
+    content: "";
+    width: 11px;
+    height: 11px;
+    background-color: white;
+    position: absolute;
+    top: 3.5px;
+    right: 29.9%;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+main .bottom .remains {
+    position: absolute;
+    bottom: -35px;
+    /* left: calc(50% - ); */
+    background-color: white;
+    font-weight: 700;
+    color: var(--Grayish-Blue);
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    width: max-content;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    text-transform: uppercase;
+}
+
+main .bottom .remains span {
+    font-size: 3rem;
+    color: var(--Very-Dark-Blue);
+}
+
+@media (min-width: 1100px) {
+    body {
+        background-color: var(--Very-Dark-Blue);
+        background-size: contain;
+        background-position: bottom;
+        background-image: url(images/bg-desktop.png);
+    }
+
+    main {
+        width: 900px;
+        max-width: initial;
+        flex-flow: row nowrap;
+    }
+
+    main .card.top {
+        width: 40%;
+    }
+
+    main .card.bottom {
+        gap: 10px;
+        width: 70%;
+        align-self: flex-end;
+        padding: 30px 40px 15px;
+    }
+
+    main .card.bottom p {
+        align-self: flex-start;
+    }
+
+    main .card.bottom .remains {
+        top: -50px;
+        right: 40px;
+        bottom: initial;
+    }
+    main .card.bottom .remains::before {
+        content: "";
+        position: absolute;
+        border: 20px solid blue;
+        border-color: transparent white transparent transparent;
+        bottom: -20px;
+        right: 0;
+    }
+}
